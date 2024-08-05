@@ -35,6 +35,12 @@ services:
     depends_on:
       - redis
       - catalogue
+  mysql:
+    image: mahussain01/mysql:v1
+    container_name: mysql
+    networks:
+      - roboshop
+
   web:
     image: mahussain01/web:v1
     container_name: web
