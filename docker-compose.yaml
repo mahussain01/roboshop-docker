@@ -40,14 +40,14 @@ services:
     container_name: mysql
     networks:
       - roboshop
-shipping:
-  image: mahussain01/shipping:v1
-  container_name: shipping
-  networks:
-    - roboshop
-  depends_on:
-    - cart
-    - mysql
+  shipping:
+    image: mahussain01/shipping:v1
+    container_name: shipping
+    networks:
+      - roboshop
+    depends_on:
+      - cart
+      - mysql
   web:
     image: mahussain01/web:v1
     container_name: web
