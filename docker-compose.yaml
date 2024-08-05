@@ -28,7 +28,7 @@ services:
       - mongodb
       - redis
   web:
-    image: mahussain/web:v2
+    image: mahussain01/web:v1
     container_name: web
     networks:
       - roboshop
