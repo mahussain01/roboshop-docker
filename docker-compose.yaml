@@ -27,6 +27,14 @@ services:
     depends_on:
       - mongodb
       - redis
+  cart:
+    image: mahussain01/cart:v1
+    container_name: cart
+    networks:
+      - roboshop
+    depends_on:
+      - redis
+      - catalogue
   web:
     image: mahussain01/web:v1
     container_name: web
@@ -37,3 +45,4 @@ services:
     depends_on:
       - catalogue
       - user
+      - cart
