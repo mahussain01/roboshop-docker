@@ -1,7 +1,6 @@
 networks:
   roboshop:
-  driver:bridge
-
+  driver: bridge
 services:
   mongodb:
     image: mahussain01/mongodb:v1
@@ -13,8 +12,7 @@ services:
     container_name: catalogue
     networks:
       - roboshop
-    depends_on:
-      -mongodb
+    depends_on: -mongodb
   redis:
     image: redis
     container_name: redis
@@ -25,7 +23,7 @@ services:
     container_name: user
     networks:
       - roboshop
-    depends_on :
+    depends_on:
       - mongodb
       - redis
   web:
